@@ -85,7 +85,7 @@ export default function Home() {
   };
 
   return (
-    <main className="mt-8 flex w-full flex-1 flex-col items-center justify-center gap-2">
+    <main className="mt-8 flex w-full flex-1 flex-col items-center justify-center gap-2 bg-black text-white">
       <h1 className="cursor-default text-3xl font-semibold">
         Lista de Compras{" "}
         <span onClick={() => console.log(list)} className="cursor-pointer">
