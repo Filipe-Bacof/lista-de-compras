@@ -147,10 +147,10 @@ export default function Home() {
                 }
               />
               <button onClick={() => handleRemoveItem(index)}>❌</button>
-              {item.checked && (
-                <div className="pointer-events-none w-[90%] -translate-y-4 border-t"></div>
-              )}
             </div>
+            {item.checked && (
+              <div className="pointer-events-none w-2/3 -translate-y-4 translate-x-8 border-t md:translate-x-20"></div>
+            )}
           </li>
         ))}
       </ul>
