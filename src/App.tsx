@@ -102,12 +102,10 @@ export default function Home() {
 
       <ul className="flex flex-col items-center justify-center gap-2">
         <li className="flex cursor-default items-end justify-end gap-4 text-slate-400">
-          <span className="pl-14 pr-24">Título</span>
-          <span>Quant.</span>
-          <span>Preço</span>
+          <span>Título - Quantidade - Preço</span>
         </li>
         {list.map((item, index) => (
-          <li key={index} className="flex h-8 flex-col">
+          <li key={index} className="flex h-8 w-full flex-col">
             <div className="flex flex-row items-center justify-center gap-2">
               <span>{index + 1}.&nbsp;</span>
               <input
@@ -117,7 +115,7 @@ export default function Home() {
                 onChange={() => handleCheckboxChange(index)}
               />
               <input
-                className="border-b border-slate-600 bg-black px-2 py-1"
+                className="w-[30%] border-b border-slate-600 bg-black px-2 py-1"
                 type="text"
                 value={item.name}
                 onChange={(e) =>
@@ -125,7 +123,7 @@ export default function Home() {
                 }
               />
               <input
-                className="w-10 border-b border-slate-600 bg-black px-2 py-1"
+                className="w-[10%] border-b border-slate-600 bg-black px-2 py-1"
                 type="number"
                 value={item.amount}
                 onChange={(e) =>
@@ -137,7 +135,7 @@ export default function Home() {
                 }
               />
               <input
-                className="w-16 border-b border-slate-600 bg-black px-2 py-1"
+                className="w-[20%] border-b border-slate-600 bg-black px-2 py-1"
                 type="number"
                 value={item.value}
                 onChange={(e) =>
@@ -149,10 +147,10 @@ export default function Home() {
                 }
               />
               <button onClick={() => handleRemoveItem(index)}>❌</button>
+              {item.checked && (
+                <div className="pointer-events-none w-[90%] -translate-y-4 border-t"></div>
+              )}
             </div>
-            {item.checked && (
-              <div className="pointer-events-none w-[93%] -translate-y-4 border-t"></div>
-            )}
           </li>
         ))}
       </ul>
